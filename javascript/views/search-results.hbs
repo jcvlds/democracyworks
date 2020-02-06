@@ -1,0 +1,45 @@
+<div class="search">
+    <h1>{{title}}</h1>
+
+    <div class="results">
+    {{#each results}}
+      <div class=card>
+        <div class=container>
+
+          <div class=general>
+            <h2>{{description}} - {{type}}</h2>
+            <h4>{{date}}</h4>
+          </div>
+
+          <div class="info">
+            <div class=voting-methods>
+              <h5>Voting methods for your district</h5>
+              {{#each district-divisions}}
+                <ul>
+                {{#each voting-methods}}
+                  <li>{{type}}</li>
+                {{/each}}
+                </ul>
+              {{/each}}
+            </div>
+
+            <div class=registration-methods>
+              <h5>Registration methods available for you</h5>
+              {{#each district-divisions}}
+              <ul>
+                {{#each voter-registration-methods}}
+                  <li>{{type}}</li>
+                {{/each}}
+              </ul>
+              {{/each}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {{/each}}
+    </div>
+
+    <div class="button"><button onclick="window.location.href = 'http://localhost:3000';">Back Home</button></div>
+
+</div>
