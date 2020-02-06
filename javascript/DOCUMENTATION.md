@@ -18,6 +18,22 @@
   Results page should render two upcoming elections for that address
 
 
+## Dependencies Added
+  Axios
+
+
+## Modules Added and Descriptions
+  /controllers/SearchController.js
+      - Controller to handle the app logic when server receives a POST search request. Abstracting this handler allows the /routes/index.js module to remain nice and clean
+      - The controller calls the function that generates OCD IDs and sends it the user address inputs. Then, it gets the OCD IDs and calls the API with it to fetch upcoming elections
+  /controllers/generateOCDIds.js
+      - Holds the logic to generate the OCD IDs given 'state' and 'city' inputs
+  /api/apiElections.js
+      - Imports Axios and creates the API GET call
+  /views/search-results.hbs
+      - Uses Handlebars to loop through the response data and display the upcoming elections in a structured and easy to read format to the user
+
+
 ## Criteria
   - Form submits ✅
   - State and OCD-IDs are correctly generated ✅
@@ -31,5 +47,3 @@
   - Documentation ✅
   - Functions/Classes/Methods small and clearly scoped ✅
   - Clear names ✅
-
-## link to code
